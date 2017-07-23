@@ -69,7 +69,10 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         @Override
         public void onClick(View v) {
             Log.d(TAG, "onClick: position: " + getAdapterPosition());
-            mContext.startActivity(new Intent(mContext, DetailView.class));
+            int position = getAdapterPosition();
+            Intent intent = new Intent(mContext, DetailView.class);
+            intent.putExtra("name", mAds.getAds().get(position).getProductName());
+            mContext.startActivity(intent);
         }
     }
 }
