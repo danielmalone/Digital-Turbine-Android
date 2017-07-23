@@ -2,6 +2,8 @@ package com.finepointmobile.digitalturbinexml;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
@@ -18,12 +20,18 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String API_BASE_URL = "http://ads.appia.com/";
 
+    RecyclerView mRecyclerView;
+    RecyclerView.Adapter mAdapter;
+    Ads mAds;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_BASE_URL)
@@ -37,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Ads> call, Response<Ads> response) {
                 Log.d(TAG, "onResponse: success!" + response);
-                Ads ads = response.body();
-                Log.d(TAG, "onResponse: ad: " + ads + " status code: " + response.code());
-                for (int i = 0; i < ads.getAds().size(); i++) {
-                    Log.d(TAG, "onResponse: successfully getting data... " + ads.getAds().get(i).getClickProxyURL());
+                mAds = response.body();
+                Log.d(TAG, "onResponse: ad: " + mAds + " status code: " + response.code());
+                for (int i = 0; i < mAds.getAds().size(); i++) {
+                    Log.d(TAG, "onResponse: successfully getting data... " + mAds.getAds().get(i).getClickProxyURL());
                 }
+                loadRecyclerView();
             }
 
             @Override
@@ -49,5 +58,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onFailure: error: " + t);
             }
         });
+    }
+
+    private void loadRecyclerView() {
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(new MainAdapter(mAds));
     }
 }
