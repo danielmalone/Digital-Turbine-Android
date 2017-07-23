@@ -14,4 +14,8 @@ public class Ads {
 
     @ElementList(inline = true)
     private List<Ad> ad;
+
+    public List<Ad> getAds() {
+        return this.ad;
+    }
 }

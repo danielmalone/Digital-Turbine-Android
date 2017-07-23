@@ -12,4 +12,8 @@ public class Ad {
 
     @Element
     private String clickProxyURL;
+
+    public String getClickProxyURL() {
+        return this.clickProxyURL;
+    }
 }

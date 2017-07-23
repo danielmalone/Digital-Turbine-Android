@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onResponse: success!" + response);
                 Ads ads = response.body();
                 Log.d(TAG, "onResponse: ad: " + ads + " status code: " + response.code());
+                for (int i = 0; i < ads.getAds().size(); i++) {
+                    Log.d(TAG, "onResponse: successfully getting data... " + ads.getAds().get(i).getClickProxyURL());
+                }
             }
 
             @Override
