@@ -8,12 +8,12 @@ import org.simpleframework.xml.Root;
  */
 
 @Root(strict = false)
-public class Ad {
+public class Ads {
 
-    @Root
-    private static class Asdf {
+    @Root(name = "ad", strict = false)
+    public static class Ad {
 
         @Element
-        public String campaignId;
+        private String appId;
     }
 }

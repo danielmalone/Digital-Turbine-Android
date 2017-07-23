@@ -32,17 +32,17 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         ApiServiceInterface apiService = retrofit.create(ApiServiceInterface.class);
-        Call<Ad> mDataset = apiService.getUser();
-        mDataset.enqueue(new Callback<Ad>() {
+        Call<Ads> mDataset = apiService.getUser();
+        mDataset.enqueue(new Callback<Ads>() {
             @Override
-            public void onResponse(Call<Ad> call, Response<Ad> response) {
+            public void onResponse(Call<Ads> call, Response<Ads> response) {
                 Log.d(TAG, "onResponse: success!" + response);
-                Ad ad = response.body();
+                Ads ad = response.body();
                 Log.d(TAG, "onResponse: ad: " + ad);
             }
 
             @Override
-            public void onFailure(Call<Ad> call, Throwable t) {
+            public void onFailure(Call<Ads> call, Throwable t) {
                 Log.d(TAG, "onFailure: error: " + t);
             }
         });

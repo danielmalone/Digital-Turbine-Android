@@ -9,5 +9,5 @@ import retrofit2.http.GET;
 
 public interface ApiServiceInterface {
     @GET("getAds?id=236&password=OVUJ1DJN&siteId=4288&deviceId=4230&sessionId=techtestsession&totalCampaignsRequested=10")
-    Call<Ad> getUser();
+    Call<Ads> getUser();
 }
