@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
+import com.finepointmobile.digitalturbinexml.models.Ads;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         ApiServiceInterface apiService = retrofit.create(ApiServiceInterface.class);
         Call<Ads> mDataset = apiService.getUser();
-        
+
         mDataset.enqueue(new Callback<Ads>() {
             @Override
             public void onResponse(Call<Ads> call, Response<Ads> response) {

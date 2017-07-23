@@ -1,4 +1,4 @@
-package com.finepointmobile.digitalturbinexml;
+package com.finepointmobile.digitalturbinexml.models;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
