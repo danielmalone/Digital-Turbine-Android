@@ -13,7 +13,14 @@ public class Ad {
     @Element
     private String clickProxyURL;
 
+    @Element
+    private String productName;
+
     public String getClickProxyURL() {
-        return this.clickProxyURL;
+        return clickProxyURL;
+    }
+
+    public String getProductName() {
+        return productName;
     }
 }

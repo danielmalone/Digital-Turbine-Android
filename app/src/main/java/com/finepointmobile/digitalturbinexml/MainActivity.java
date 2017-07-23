@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String API_BASE_URL = "http://ads.appia.com/";
 
     RecyclerView mRecyclerView;
-    RecyclerView.Adapter mAdapter;
     Ads mAds;
 
     @Override

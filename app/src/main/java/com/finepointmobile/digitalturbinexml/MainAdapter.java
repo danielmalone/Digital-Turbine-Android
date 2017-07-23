@@ -26,7 +26,7 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(MainAdapter.ViewHolder holder, int position) {
-        holder.mTitle.setText("asdf");
+        holder.mTitle.setText(mAds.getAds().get(position).getProductName());
     }
 
     @Override
