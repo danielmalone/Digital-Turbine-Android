@@ -45,10 +45,6 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Ads> call, Response<Ads> response) {
                 Log.d(TAG, "onResponse: success!" + response);
                 mAds = response.body();
-                Log.d(TAG, "onResponse: ad: " + mAds + " status code: " + response.code());
-                for (int i = 0; i < mAds.getAds().size(); i++) {
-                    Log.d(TAG, "onResponse: successfully getting data... " + mAds.getAds().get(i).getClickProxyURL());
-                }
                 loadRecyclerView();
             }
 
@@ -62,6 +58,6 @@ public class MainActivity extends AppCompatActivity {
     private void loadRecyclerView() {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(new MainAdapter(mAds));
+        mRecyclerView.setAdapter(new MainAdapter(mAds, MainActivity.this));
     }
 }

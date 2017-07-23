@@ -11,16 +11,23 @@ import org.simpleframework.xml.Root;
 public class Ad {
 
     @Element
-    private String clickProxyURL;
+    private String productThumbnail;
 
     @Element
     private String productName;
 
-    public String getClickProxyURL() {
-        return clickProxyURL;
+    @Element
+    private String rating;
+
+    public String getProductThumbnail() {
+        return productThumbnail;
     }
 
     public String getProductName() {
         return productName;
+    }
+
+    public String getRating() {
+        return rating;
     }
 }
