@@ -72,6 +72,9 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             int position = getAdapterPosition();
             Intent intent = new Intent(mContext, DetailView.class);
             intent.putExtra("name", mAds.getAds().get(position).getProductName());
+            intent.putExtra("category", mAds.getAds().get(position).getCategoryName());
+            intent.putExtra("description", mAds.getAds().get(position).getProductDescription());
+            intent.putExtra("image", mAds.getAds().get(position).getProductThumbnail());
             mContext.startActivity(intent);
         }
     }

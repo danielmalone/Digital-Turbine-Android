@@ -19,6 +19,12 @@ public class Ad {
     @Element
     private String rating;
 
+    @Element
+    private String productDescription;
+
+    @Element
+    private String categoryName;
+
     public String getProductThumbnail() {
         return productThumbnail;
     }
@@ -29,5 +35,13 @@ public class Ad {
 
     public String getRating() {
         return rating;
+    }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
     }
 }
