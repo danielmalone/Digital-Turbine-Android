@@ -34,6 +34,7 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(MainAdapter.ViewHolder holder, int position) {
         holder.mTitle.setText(mAds.getAds().get(position).getProductName());
         Picasso.with(mContext).load(mAds.getAds().get(position).getProductThumbnail()).into(holder.mImage);
+        holder.mRating.setText(mAds.getAds().get(position).getRating());
     }
 
     @Override
@@ -45,12 +46,14 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
         public TextView mTitle;
         public ImageView mImage;
+        public TextView mRating;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             mTitle = (TextView) itemView.findViewById(R.id.title);
             mImage = (ImageView) itemView.findViewById(R.id.image);
+            mRating = (TextView) itemView.findViewById(R.id.rating);
         }
     }
 }

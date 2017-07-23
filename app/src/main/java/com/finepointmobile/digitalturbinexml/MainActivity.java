@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
         ApiServiceInterface apiService = retrofit.create(ApiServiceInterface.class);
         Call<Ads> mDataset = apiService.getUser();
+        
         mDataset.enqueue(new Callback<Ads>() {
             @Override
             public void onResponse(Call<Ads> call, Response<Ads> response) {
-                Log.d(TAG, "onResponse: success!" + response);
                 mAds = response.body();
                 loadRecyclerView();
             }
