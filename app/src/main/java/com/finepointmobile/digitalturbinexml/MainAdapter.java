@@ -75,6 +75,8 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             intent.putExtra("category", mAds.getAds().get(position).getCategoryName());
             intent.putExtra("description", mAds.getAds().get(position).getProductDescription());
             intent.putExtra("image", mAds.getAds().get(position).getProductThumbnail());
+            intent.putExtra("min_os_version", mAds.getAds().get(position).getMinOSVersion());
+            intent.putExtra("number_of_ratings", mAds.getAds().get(position).getNumberOfRatings());
             mContext.startActivity(intent);
         }
     }

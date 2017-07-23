@@ -25,6 +25,12 @@ public class Ad {
     @Element
     private String categoryName;
 
+    @Element(required = false)
+    private String minOSVersion;
+
+    @Element
+    private String numberOfRatings;
+
     public String getProductThumbnail() {
         return productThumbnail;
     }
@@ -43,5 +49,13 @@ public class Ad {
 
     public String getCategoryName() {
         return categoryName;
+    }
+
+    public String getMinOSVersion() {
+        return minOSVersion;
+    }
+
+    public String getNumberOfRatings() {
+        return numberOfRatings;
     }
 }
