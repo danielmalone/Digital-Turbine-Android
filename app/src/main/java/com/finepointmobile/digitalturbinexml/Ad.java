@@ -1,17 +1,15 @@
 package com.finepointmobile.digitalturbinexml;
 
-import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
-
-import java.util.List;
 
 /**
  * Created by danielmalone on 7/22/17.
  */
 
 @Root(strict = false)
-public class Ads {
+public class Ad {
 
-    @ElementList(inline = true)
-    private List<Ad> ad;
+    @Element
+    private String clickProxyURL;
 }

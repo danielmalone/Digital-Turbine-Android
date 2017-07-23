@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Ads> call, Response<Ads> response) {
                 Log.d(TAG, "onResponse: success!" + response);
-                Ads ad = response.body();
-                Log.d(TAG, "onResponse: ad: " + ad);
+                Ads ads = response.body();
+                Log.d(TAG, "onResponse: ad: " + ads + " status code: " + response.code());
             }
 
             @Override
